@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    
+    protected $fillable = [
+        'title',
+        'body',
+        'detail_foodname',
+        'detail_cafeURL',
+];
+    
    public function getpaginateByLimit(int $limit_count = 5) 
    {
 
