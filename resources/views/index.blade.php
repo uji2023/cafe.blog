@@ -10,9 +10,13 @@
        <h1>CAFE BLOG</h1>
        <p class='create'>[<a href='/posts/create'>create</a>]</p>
        <div class='posts'>
-          @foreach ($posts as $post)
+         @foreach ($posts as $post)
            <div class='post'>
                <a href='/posts/{{$post->id}}'><h2 class='title'>{{$post->title}}</h2></a>
+    　　　　　 　　　　@if($post->image)   　　　　 
+    　　　　　 　　　　<!-- 画像を表示 -->
+      　　　  　　　<img src="{{ $post->image }}">
+   　　　      　@endif
                <p class='body'>{{$post->body}}</p>
                <p class='detail_foodname'>{{$post->detail_foodname}}</p>
                <p class='detail_cafeURL'>{{$post->detail_cafeURL}}</p>
