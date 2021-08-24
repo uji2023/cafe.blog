@@ -4,6 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+
 
 class Post extends Model
 {
@@ -16,9 +21,11 @@ class Post extends Model
         'detail_cafeURL',
 ];
     
-   public function getpaginateByLimit(int $limit_count = 10) 
+   public function getPaginateByLimit(int $limit_count = 10) 
    {
 
     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
    }
+   
 }
+   
